@@ -1,0 +1,41 @@
+.container3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d0e1f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  width: 1000px;
+  color: black;
+  
+}
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #b5a8ff;
+  position: relative;
+ 
+}
+.circle span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.rectangle {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 600px;
+  margin-right: 1in;
+}
+h4 {
+  margin: 10px 0;
+  font-size: 18px;
+}

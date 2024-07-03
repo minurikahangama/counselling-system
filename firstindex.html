@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Smile</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">  
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-server me-3"></i>Smile</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="firstindex.html" class="nav-item nav-link active">Home</a>
+                        <a href="newabout.html" class="nav-item nav-link">About</a>
+                        <a href="newservice.html" class="nav-item nav-link"> Our Services</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><ion-icon name="caret-down-circle-outline"></ion-icon></a>
+                            <div class="dropdown-menu m-0">
+                                <a href="project.html" class="dropdown-item">Our Projects</a>
+                                <a href="comparison.html" class="dropdown-item">Comparison</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    
+                    <a href="login.html" class="btn btn-secondary py-2 px-4 ms-3">Login</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-6 pt-5 text-center text-lg-start">
+                            <h1 class="display-4 text-white mb-4 animated slideInLeft">Welcome</h1>
+                            <p class="text-white animated slideInLeft">Get Ready To Solve Your Problems</p>
+                            <h1 class="text-white mb-4 animated slideInLeft">
+                                <small class="align-top fw-normal" style="font-size: 15px; line-height: 25px;"></small>
+                                <span>You are a valuble person to the world.</span>
+                                <small class="align-bottom fw-normal" style="font-size: 15px; line-height: 33px;"></small>
+                            </h1>
+                            
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid animated zoomIn" src="host.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content" style="background: rgba(29, 40, 51, 0.8);">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center justify-content-center">
+                        <div class="input-group" style="max-width: 600px;">
+                            <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                            <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        
+        <div class="container-xxl domain mb-5" style="margin-top: 90px;">
+            <div class="container px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="section-title position-relative text-center mx-auto mb-4 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                            <h1 class="mb-3">Only a few words of encouragement can help a lot to get out of a slump.</h1>
+                            <p class="mb-1">"Movement is a medicine for creating change in a person’s physical, emotional, and mental states.”</p>
+                        </div>
+                        
+                        <div class="row g-3 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+                                <h5 class="fw-bold text-primary mb-1">Hi</h5>
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+                                <h5 class="fw-bold text-primary mb-1">Love You</h5>
+                                
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+                                <h5 class="fw-bold text-primary mb-1">Respect</h5>
+                                
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+                                <h5 class="fw-bold text-primary mb-1">Tell Me</h5>
+                                
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+                                <h5 class="fw-bold text-primary mb-1">I'll Listen</h5>
+                                
+                            </div>
+                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
+                                <h5 class="fw-bold text-primary mb-1">Take Care</h5>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="section-title position-relative mb-4 pb-4">
+                            <h1 class="mb-2">Welcome to Smile</h1>
+                        </div>
+                        <p class="mb-4">At Sri Lanka Sumithrayo, our volunteers are available for befriending via Telephone, Face to Face, Messaging, or Email at our centers. Opening and closing times at our centers vary from 9am to 4pm.</p>
+                        <p class="mb-4">There are 10 Sri Lanka Sumithrayo centers spread across the country. Our Rural Program includes 2 centers in Panduwasnuwara & Lunugamverhera.</p>
+                        <p class="mb-4">Sri Lanka Sumithrayo is a government-approved charity founded in 1974 by late Mrs. Joan De Mel.</p>
+                        <p class="mb-4"> Providing emotional support to help those at risk of suicide.If you feel emotionally overwhelmed, please know that we are here for you.</p>
+                        <div class="row g-3">
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">500</h2>
+                                    <p class="mb-0">Experts</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-users fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">10045</h2>
+                                    <p class="mb-0">Clients</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="bg-light rounded text-center p-4">
+                                    <i class="fa fa-check fa-2x text-primary mb-2"></i>
+                                    <h2 class="mb-1" data-toggle="counter-up">100000</h2>
+                                    <p class="mb-0">Projects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="above.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Services Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Our Services</h1>
+                    <p class="mb-1">“It doesn’t matter how slow you go, as long as you don’t stop.”</p>
+                </div>
+                <div class="row gy-5 gx-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="position-relative shadow rounded border-top border-5 border-primary">
+                            <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                                <i class="fa fa-share-alt text-white"></i>
+                            </div>
+                            <div class="text-center border-bottom p-4 pt-5">
+                                <h4 class="fw-bold">Understanding Suicide</h4>
+                                <p class="mb-0">who are not in the grips of suicidal depression and despair, it’s difficult to understand what drives so many individuals to take their own lives.</p>
+                            </div>
+                            <div>
+                                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="dilu.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="position-relative shadow rounded border-top border-5 border-secondary">
+                            <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-secondary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                                <i class="fa fa-server text-white"></i>
+                            </div>
+                            <div class="text-center border-bottom p-4 pt-5">
+                                <h4 class="fw-bold">Warning Signs of Suicide</h4>
+                                <p class="mb-0">Most suicidal individuals give warning signs or signals of their intentions. The best way to prevent suicide is to recognize these warning signs and know how to respond if you spot them.</p>
+                            </div>
+                            <div>
+                                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="jet.jpg"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="position-relative shadow rounded border-top border-5 border-primary">
+                            <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                                <i class="fa fa-cog text-white"></i>
+                            </div>
+                            <div class="text-center border-bottom p-4 pt-5">
+                                <h4 class="fw-bold">Suicide Prevention</h4>
+                                <p class="mb-0">If a friend or family member tells you that they’re thinking about death or suicide, it’s important to evaluate the immediate danger the person is in.</p>
+                            </div>
+                            <div>
+                                <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="rash.jpeg">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- services End -->
+
+
+        <!-- Comparison Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Online vs Physical Counselling</h1>
+                    <p class="mb-1">Just putting my uniform on keeps me going. Being able to get out there keeps me going. That’s the best therapy</p>
+                </div>
+                <div class="row g-5 comparison position-relative">
+                    <div class="col-lg-6 pe-lg-5">
+                        <div class="section-title position-relative mx-auto mb-4 pb-4">
+                            <h3 class="fw-bold mb-0">Online</h3>
+                        </div>
+                        <div class="row gy-3 gx-5">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                <i class="fa fa-server fa-3x text-primary mb-3"></i>
+                                <h5 class="fw-bold">99.99% Uptime</h5>
+                                
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                                <i class="fa fa-shield-alt fa-3x text-primary mb-3"></i>
+                                <h5 class="fw-bold">100% Secured</h5>
+                                
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <i class="fa fa-cog fa-3x text-primary mb-3"></i>
+                                <h5 class="fw-bold">Friendly Service</h5>
+                                
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                <i class="fa fa-headset fa-3x text-primary mb-3"></i>
+                                <h5 class="fw-bold"> Huge Support</h5>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-5">
+                        <div class="section-title position-relative mx-auto mb-4 pb-4">
+                            <h3 class="fw-bold mb-0">Physical</h3>
+                        </div>
+                        <div class="row gy-3 gx-5">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                <i class="fa fa-server fa-3x text-secondary mb-3"></i>
+                                <h5 class="fw-bold">99.99% Uptime</h5>
+                                
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                                <i class="fa fa-shield-alt fa-3x text-secondary mb-3"></i>
+                                <h5 class="fw-bold">100% Secured</h5>
+                               
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <i class="fa fa-cog fa-3x text-secondary mb-3"></i>
+                                <h5 class="fw-bold">Friendly Service</h5>
+                                
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                                <i class="fa fa-headset fa-3x text-secondary mb-3"></i>
+                                <h5 class="fw-bold">Huge Support</h5>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Comparison end -->
+
+
+        <!-- Projects Start -->
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4">
+                        <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mt-3">Latest news and events from Sri Lanka Sumithrayo activities</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="first.png" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="fw-bold mb-1">News and Activities</h6>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4">
+                        <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mt-3">Befriending at institutions on request and conducting awareness programs on prevention of suicide</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="second.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="fw-bold mb-1">Awareness Workshops</h6>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4">
+                        <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mt-3">Conducting online programs for the benefit of the  civil society and organisations keen to help those in crisis or simply interested to gain valuable life skills</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="webinar.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="fw-bold mb-1">webinar</h6>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 mt-4">
+                        <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
+                            <i class="fa fa-quote-left text-white"></i>
+                        </div>
+                        <p class="mt-3">Providing Emotional support to those having suicidal thoughts and feelings in the rural communities and help develop coping skills</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="rural.jpeg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="fw-bold mb-1">Rural Programme</h6>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- projects End -->
+
+        <!-- Contact Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Contact For Any Query</h1>
+                    
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-7 col-md-6">
+                        <div class="wow fadeInUp" data-wow-delay="0.2s">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                            <label for="subject">Subject</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="section-title position-relative mx-auto mb-4 pb-4">
+                            <h3 class="fw-bold mb-0">Customer Support</h3>
+                        </div>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>60/7, Horton Place, Colombo, Sri Lanka</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+94 11 2 682535</p>
+                        <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>slssumithrayo@gmail.com</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row gy-5 gx-4 pt-5">
+                    
+                    <div class="col-lg-5 col-md-12">
+                        <div class="row gy-5 g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold text-white mb-4">Privacy & Terms</h5>
+                                <a class="btn btn-link" href="privacy.html">Privacy Policy</a>
+                                <a class="btn btn-link" href="term.html">Terms & Condition</a>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="fw-bold text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>60/7, Horton Place, Colombo, Sri Lanka</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+94 11 2 682535</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>slssumithrayo@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/slsumithrayo/"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/channel/UC_rgrI1S1xtztGth0-Ce_Vg"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/srilankasumithrayo/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Smile</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By <a class="border-bottom">Code Genius</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

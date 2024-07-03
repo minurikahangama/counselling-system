@@ -1,0 +1,25 @@
+<!-- Add this script inside the <head> tag -->
+    <script>
+        function logout() {
+          // Make an AJAX request to the logout.php script to perform the logout
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+              if (xhr.status === 200) {
+                // Redirect to the login page after successful logout
+                window.location.href = 'login.php';
+              } else {
+                // Handle any errors, if necessary
+                console.error('Error occurred during logout.');
+              }
+            }
+          };
+          xhr.open('GET', 'logout.php', true);
+          xhr.send();
+        }
+      </script>
+      
+      <!-- Your existing HTML code here -->
+      <!-- You can place this logout button in the header, navigation bar, or anywhere you see fit -->
+      <button onclick="logout()">Logout</button>
+      

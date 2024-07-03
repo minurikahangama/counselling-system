@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <title>Settings Menu</title>
+
+</head> 
+<style>
+	:root {
+  --c-text-primary: #191919;
+  --c-text-secondary: #737374;
+  --c-border-primary: #ccc;
+  --c-bg-body: #ccc;
+  --c-bg-primary: #fff;
+  --c-bg-secondary: #d4d8dd;
+  --c-bg-button: #fff;
+}
+:root.dark-theme {
+  --c-text-primary: #eee;
+  --c-text-secondary: #d3d5db;
+  --c-border-primary: #454545;
+  --c-bg-body: #5e5e5e;
+  --c-bg-primary: #323339;
+  --c-bg-secondary: #222128;
+  --c-bg-button: #494a50;
+}
+:root.black-theme {
+  --c-text-primary: #edeeef;
+  --c-text-secondary: #d4d7e1;
+  --c-border-primary: #323232;
+  --c-bg-body: #000;
+  --c-bg-primary: #1b1d23;
+  --c-bg-secondary: #000001;
+  --c-bg-button: #343844;
+}
+
+body {
+  display: flex;
+  font-family: sans-serif;
+  line-height: 1.5;
+  justify-content: flex-start;
+  background-color: var(--c-bg-body);
+  transform: background-color 1s ease;
+  color: var(--c-text-primary);
+}
+
+.menu {
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--c-bg-primary);
+  transition: background-color .30s ease;
+  border-radius: 15px;
+  margin-top: 1in;
+  margin-left: 2in;
+}
+
+/* header */
+.menu-header {
+  padding: 1rem;
+}
+
+.menu-heaser-title {
+  font-size: 1.2rem;
+  color: var(--c-text-secondary);
+  font-weight: 700;
+}
+
+/* theme switcher */
+.theme-switcher input {
+  display: none;
+}
+
+.theme-switcher {
+  position: relative;
+  background-color: var(--c-bg-secondary);
+  border-radius: 10px;
+  display: flex;
+  padding: 0 3px;
+}
+
+.theme-switcher label {
+  position: relative;
+  z-index: 2;
+  width: calc(100% / 3);
+  color: var(--c-text-secondary);
+}
+
+.theme-switcher label span {
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.theme-switcher label span:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.theme-switcher .slider {
+  position: absolute;
+  z-index: 1;
+  width: calc((100% - 6px) / 3);
+  top: 3px;
+  transform: translatex(-110%);
+  bottom: 3px;
+  border-radius: 8px;
+  transition: .30s ease, transform 0.25s ease-out;
+  background-color: var(--c-bg-button);
+}
+
+.theme-switcher input:nth-of-type(1):checked ~ .slider {
+  transform: translateX(0);
+}
+.theme-switcher input:nth-of-type(2):checked ~ .slider {
+  transform: translateX(100%);
+}
+.theme-switcher input:nth-of-type(3):checked ~ .slider {
+  transform: translateX(200%);
+}
+
+/* Menu body */
+.menu-body {
+  padding: 1rem;
+  border-top: 1px solid var(--c-border-primary);
+  transition: border-color .30s ease;
+}
+
+.menu-body a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  padding: 0.6rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: .30s ease;
+}
+ 
+.menu-body a:hover {
+  background-color: var(--c-bg-secondary);
+}
+
+ion-icon {
+  margin-right: 5px;
+  font-size: 20px;
+  margin-top: 2px;
+}
+.new-section {
+  position: absolute;
+  top: 1in;
+  right: 2in;
+  width: 600px; /* Adjust the width as needed */
+  height: 500px; /* Adjust the height as needed */
+  background-color: var(--c-bg-secondary); /* Add the desired background color */
+  border-radius: 15px;
+  padding: 1rem;
+  color: var(--c-text-primary);
+}
+</style>
+<body>
+  <div class="menu">
+
+	<div class="menu-header">
+		<h2 class="menu-header-title">Theme</h2>
+		<div class="theme-switcher">
+			<input type="radio" id="light-theme" name="themes" checked />
+			<label for="light-theme">
+				<span>
+					<ion-icon name="sunny"></ion-icon> Light
+				</span>
+			</label>
+			<input type="radio" id="dark-theme" name="themes" />
+			<label for="dark-theme">
+				<span>
+					<ion-icon name="moon"></ion-icon> Dark
+				</span>
+			</label>
+			<input type="radio" id="black-theme" name="themes" />
+			<label for="black-theme">
+				<span>
+					<ion-icon name="contrast"></ion-icon> Black
+				</span>
+			</label>
+			<span class="slider"></span>
+		</div>
+	</div>
+	<div class="menu-body">
+        <a href="#" onclick="showTab('account-settings')"><ion-icon name="settings-outline"></ion-icon>Account Settings</a>
+        <a href="#" onclick="showTab('give-feedback')"><ion-icon name="chatbox-ellipses-outline"></ion-icon>Give Feedback</a>
+        <a href="#" onclick="showTab('about')"><ion-icon name="information-circle-outline"></ion-icon>About</a>
+        <a href="#" onclick="showTab('support')"><ion-icon name="mail-outline"></ion-icon>Support</a>
+      </div>
+
+      <div class="new-section" id="password-change-section">
+        <h3>Password Change</h3>
+        <form action="change password.php" method="post">
+        <label for="current-password">Current Password:</label><br>
+        <input type="password" id="current-password" name="currentPassword"><br><br>
+        <label for="new-password" name="newPassword">New Password:</label><br>
+        <input type="password" id="new-password"><br><br>
+        <label for="confirm-password" name="confirmPassword">Confirm New Password:</label><br>
+        <input type="password" id="confirm-password"><br><br>
+        <button type="submit" name="changePassword">Change Password</button>
+        <!-- <button onclick="changePassword()">Change Password</button> -->
+      </form>
+      </div>
+    
+
+       
+
+      <div class="new-section" id="feedback-section">
+        <h3>Rating & Feedback</h3>
+        <p>Thank you for using our application. We value your feedback and would appreciate it if you could take a moment to rate and provide feedback on your experience with our app.</p>
+        
+        <h4>Rate our app:</h4>
+        <div>
+          <input type="radio" id="rating-5" name="rating" value="5">
+          <label for="rating-5">&#9733; &#9733; &#9733; &#9733; &#9733;</label><br>
+          <input type="radio" id="rating-4" name="rating" value="4">
+          <label for="rating-4">&#9733; &#9733; &#9733; &#9733;</label><br>
+          <input type="radio" id="rating-3" name="rating" value="3">
+          <label for="rating-3">&#9733; &#9733; &#9733;</label><br>
+          <input type="radio" id="rating-2" name="rating" value="2">
+          <label for="rating-2">&#9733; &#9733;</label><br>
+          <input type="radio" id="rating-1" name="rating" value="1">
+          <label for="rating-1">&#9733;</label><br>
+      </div>
+    
+        <h4>Feedback:</h4>
+        <textarea id="feedback-textarea" rows="4" cols="50" placeholder="Enter your feedback here..."></textarea>
+    
+        <button class="submit-button" onclick="submitFeedback()">Submit</button>
+        <button class="back-button" onclick="showTab('about')">Back</button>
+    </div>
+      
+    <div class="new-section" id="about-section">
+      <h3>About Our App</h3>
+      <p>Welcome to our application! We are dedicated to providing you with the best user experience and continually improving our services.</p>
+      <p>Version: 1.0.0</p>
+      <p>Release Date: July 23, 2023</p>
+      <p>Developed by: Code Genius</p>
+      <p>For any inquiries or support, please contact us at hashinidulanga@gmail.com</p>
+      <div class="social-media">
+        <a href="https://www.facebook.com/example" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com/example" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/example" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    <div class="new-section" id="help-section">
+      <h3>Smile Help Center</h3>
+      <p>If you have any questions or need further assistance, please feel free to contact our support team:<br>
+      Email: hashinidulanga@gmail.com<br>
+    Phone: 0764087073</p>
+    <p>Thank you for using our online counselling system.</p>
+    <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+
+    
+      <div class="tab-content" id="account-settings">
+        <!-- Content for the "Account Settings" tab goes here -->
+      </div>
+      <div class="tab-content" id="give-feedback">
+        <!-- Content for the "Give Feedback" tab goes here -->
+      </div>
+      <div class="tab-content" id="about">
+        <!-- Content for the "About" tab goes here -->
+      </div>
+      <div class="tab-content" id="support">
+        <!-- Content for the "Support" tab goes here -->
+      </div>
+      
+</div>
+</body>
+
+
+<script>
+  // Just a tiny bit of JavaScript to add classnames to the HTML-element on toggle
+  var html = document.getElementsByTagName('html');
+  var radios = document.getElementsByName('themes'); 
+
+  for (i = 0; i < radios.length; i++) {
+    radios[i].addEventListener('change', function() {
+      html[0].classList.remove(html[0].classList.item(0));
+      html[0].classList.add(this.id);
+    });
+}
+function showTab(tabId) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach((tabContent) => {
+      if (tabContent.id === tabId) {
+        tabContent.classList.add('active');
+      } else {
+        tabContent.classList.remove('active');
+      }
+    });
+  }
+  function showTab(tabId) {
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabContents.forEach((tabContent) => {
+        if (tabContent.id === tabId) {
+          tabContent.classList.add('active');
+          if (tabId === 'account-settings') {
+            document.getElementById('password-change-section').style.display = 'block';
+          } else {
+            document.getElementById('password-change-section').style.display = 'none';
+          }
+        } else {
+          tabContent.classList.remove('active');
+        }
+      });
+    }
+
+    function changePassword() {
+      // Implement the password change functionality here
+      const currentPassword = document.getElementById('current-password').value;
+      const newPassword = document.getElementById('new-password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      // Validate passwords and perform the password change process
+      if (currentPassword === '' || newPassword === '' || confirmPassword === '') {
+        alert('Please fill in all password fields.');
+        return;
+      }
+
+      if (newPassword !== confirmPassword) {
+        alert('New password and Confirm password do not match.');
+        return;
+      }
+
+      // Perform the actual password change process here
+      // Example: Call an API to update the password on the server-side
+      // Replace the following line with the actual password change logic
+      alert('Password change functionality will be implemented here.');
+    }
+    
+    function showTab(tabId) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach((tabContent) => {
+      if (tabContent.id === tabId) {
+        tabContent.classList.add('active');
+        if (tabId === 'account-settings') {
+          document.getElementById('password-change-section').style.display = 'block';
+          document.getElementById('feedback-section').style.display = 'none';
+          document.getElementById('about-section').style.display = 'none';
+          document.getElementById('help-section').style.display='none';
+        } else if (tabId === 'give-feedback') {
+          document.getElementById('password-change-section').style.display = 'none';
+          document.getElementById('feedback-section').style.display = 'block';
+          document.getElementById('about-section').style.display = 'none';
+          document.getElementById('help-section').style.display='none';
+        } else if (tabId === 'about') {
+          document.getElementById('password-change-section').style.display = 'none';
+          document.getElementById('feedback-section').style.display = 'none';
+          document.getElementById('about-section').style.display = 'block';
+          document.getElementById('help-section').style.display='none';
+        } else {
+          document.getElementById('password-change-section').style.display = 'none';
+          document.getElementById('feedback-section').style.display = 'none';
+          document.getElementById('about-section').style.display = 'none';
+          document.getElementById('help-section').style.display='block';
+        }
+      } else {
+        tabContent.classList.remove('active');
+      }
+    });
+  }
+  function changePassword() {
+    // Implement the password change functionality here
+    // ...
+  }
+
+  function submitFeedback() {
+    // Implement the feedback submission functionality here
+    const rating = document.querySelector('input[name="rating"]:checked').value;
+    const feedback = document.getElementById('feedback-text').value;
+
+    // Do something with the rating and feedback data, e.g., submit to a server
+    console.log('Rating:', rating);
+    console.log('Feedback:', feedback);
+
+    // Display a thank-you message or perform any other necessary actions
+    alert('Thank you for your feedback!');
+  }
+</script>
+</body>
+</html>
+    

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="proceed.css">
+</head>
+<body>
+    <div id="intro-modal" class="modal">
+        <div class="modal-content">
+          <h2>Introduce Yourself</h2>
+          <i class="close-button">X</i>
+          <form id="intro-form" method="post" action="1user registration.php">
+            <input type="text" placeholder="First Name" name="FirstName">
+            <input type="text" placeholder="Last Name" name="LastName">
+            <input type="email" placeholder="Email" name="email">
+            <input type="address" placeholder="Address" name="Addres">
+            <input type="tel" placeholder="Phone Number" name="phone">
+            <input type="text" placeholder="DOB" name="dob">
+            <input type="text" placeholder="Occupation" name="Occupation">
+            <input type="text" placeholder="Gender" name="Gender">
+            <input type="text" placeholder="Maritual status" name="MaritualStatus">
+            <input type="text" placeholder="NIC" name="NIC">
+            <input type="text" placeholder="BIO" name="Bio">
+    
+        <label for="children">Do you have children?</label>
+        <input type="checkbox" id="children" name="children">
+    
+        <label for="pregnancy">Are you pregnant?</label>
+        <input type="checkbox" id="pregnancy" name="pregnancy">
+    
+        <label for="counselling">Have you taken counseling before?</label>
+        <input type="checkbox" id="counselling" name="counselling">
+            <!--<button type="submit">Submit</button>-->
+            <input type="submit" value="Proceed!" name="submit" />
+          </form>
+        </div>
+       </div>
+
+       <script src="proceed.js"></script>
+      
+</body>
+</html>

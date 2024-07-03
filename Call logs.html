@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive HTML Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body{
+  background-color: peachpuff;
+}
+.topic {
+  position: absolute;
+  top: 1in; /* 1 inch from top margin */
+  left: 1in; /* 1 inch from left margin */
+}
+
+body>div{
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.table_responsive {
+    max-width: 900px;
+    /*border: 1px solid #00bcd4;*/
+    background-color: #efefef33;
+    padding: 5px;
+    overflow: auto;
+    margin: auto;
+    border-radius: 4px;
+    padding-top: 1in;
+    padding-bottom: 0.5in;
+}
+
+table {
+    width: 90%;
+    font-size: 13px;
+    color: #444;
+    white-space: nowrap;
+    border-collapse: collapse;
+    margin-left: 1in;
+}
+
+table>thead {
+    background-color: #00bcd4;
+    color: #fff;
+}
+
+table>thead th {
+    padding: 15px;
+    font-size: medium;
+}
+
+table th,
+table td {
+    border: 1px solid #00000017;
+    padding: 10px 15px;
+}
+
+table>tbody>tr>td>img {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 2px 6px #0003;
+}
+
+
+.action_btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action_btn>a {
+    text-decoration: none;
+    color: #444;
+    background: #fff;
+    border: 1px solid;
+    display: inline-block;
+    padding: 7px 20px;
+    font-weight: bold;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+}
+
+.action_btn>a:nth-child(1) {
+    border-color: #26a69a;
+}
+
+.action_btn>a:nth-child(2) {
+    border-color: orange;
+}
+
+.action_btn>a:hover {
+    box-shadow: 0 3px 8px #0003;
+}
+
+
+table>tbody>tr {
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+
+table>tbody>tr:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+}
+
+table>tbody>tr:hover{
+    filter: drop-shadow(0px 2px 6px #0002);
+}
+</style>
+</head>
+<body>
+  <h1>Call Log</h1>
+  <table id="callTable">
+    <thead>
+      <tr>
+        <th>Caller Name</th>
+        <th>Phone Number</th>
+        <th>Call Type</th>
+        <th>Call Duration</th>
+        <th>Notes</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><textarea data-id="${callLog._id}" onblur="saveNotes(event)"></textarea></td>
+            <td><button data-id="1" onclick="deleteCallLog(event)">Delete</button></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><textarea data-id="${callLog._id}" onblur="saveNotes(event)"></textarea></td>
+            <td><button data-id="2" onclick="deleteCallLog(event)">Delete</button></td>
+          </tr>
+    </tbody>
+  </table>
+  <button id="saveButton" style="display: none; position: absolute; bottom: 80px; right: 100px;  width: 120px; height: 40px;">Save Notes</button>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const callForm = document.getElementById('callForm');
+      const callTableBody = document.querySelector('#callTable tbody');
+      const saveButton = document.getElementById('saveButton');
+      
+      fetchCallLogs();
+
+      
+      callForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formData = new FormData(callForm);
+
+        const callLog = {
+          callerName: formData.get('callerName'),
+          phoneNumber: formData.get('phoneNumber'),
+          callType: formData.get('callType'),
+          callDuration: formData.get('callDuration'),
+          notes: formData.get('notes'),
+        };
+
+        
+        saveCallLog(callLog);
+      });
+
+      
+      function fetchCallLogs() {
+        fetch('/api/call-logs')
+          .then((response) => response.json())
+          .then((callLogs) => {
+            
+            callTableBody.innerHTML = '';
+
+            callLogs.forEach((callLog) => {
+              
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${callLog.callerName}</td>
+                <td>${callLog.phoneNumber}</td>
+                <td>${callLog.callType}</td>
+                <td>${callLog.callDuration}</td>
+                <td>${callLog.notes}</td>
+                <td><button data-id="${callLog._id}" onclick="deleteCallLog(event)">Delete</button></td>
+              `;
+              callTableBody.appendChild(row);
+            });
+          })
+          .catch((error) => console.error('Error fetching call logs:', error));
+      }
+
+      
+      function saveCallLog(callLog) {
+        fetch('/api/call-logs', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(callLog),
+        })
+          .then((response) => response.json())
+          .then((newCallLog) => {
+            
+            callForm.reset();
+           
+            fetchCallLogs();
+          })
+          .catch((error) => console.error('Error saving call log:', error));
+      }
+
+      
+      function deleteCallLog(event) {
+        const callLogId = event.target.getAttribute('data-id');
+        fetch(`/api/call-logs/${callLogId}`, {
+          method: 'DELETE',
+        })
+          .then((response) => response.json())
+          .then(() => {
+            
+            fetchCallLogs();
+          })
+          .catch((error) => console.error('Error deleting call log:', error));
+      }
+    });
+    function saveNotes(event) {
+    const callLogId = event.target.getAttribute('data-id');
+    const updatedNotes = event.target.value;
+
+    fetch(`/api/call-logs/${callLogId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ notes: updatedNotes }),
+    })
+      .then((response) => response.json())
+      .then(() => {
+        
+      })
+      .catch((error) => console.error('Error saving notes:', error));
+  }
+  saveButton.addEventListener('click', function () {
+      const notesTextarea = document.getElementById('notesTextarea');
+      const callLogId = notesTextarea.getAttribute('data-id');
+      const updatedNotes = notesTextarea.value;
+
+      fetch(`/api/call-logs/${callLogId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ notes: updatedNotes }),
+      })
+        .then((response) => response.json())
+        .then(() => {
+          // Optionally, you can display a message to indicate that the notes have been saved.
+          // For example, you could show a success message below the Save button.
+          const successMessage = document.createElement('p');
+          successMessage.textContent = 'Notes saved successfully!';
+          successMessage.style.color = 'green';
+          saveButton.insertAdjacentElement('afterend', successMessage);
+          setTimeout(() => {
+            successMessage.remove();
+          }, 3000); // Remove the success message after 3 seconds
+        })
+        .catch((error) => console.error('Error saving notes:', error));
+    });
+
+    // Function to enable the Save button when the notes are being edited
+    function enableSaveButton(event) {
+      const notesTextarea = event.target;
+      saveButton.style.display = 'block';
+      saveButton.disabled = false;
+      saveButton.setAttribute('data-id', notesTextarea.getAttribute('data-id'));
+    }
+
+    // Function to disable the Save button when the notes are no longer being edited
+    function disableSaveButton() {
+      saveButton.style.display = 'none';
+      saveButton.disabled = true;
+      saveButton.removeAttribute('data-id');
+    }
+
+    // Attach event listeners to each notes textarea for enabling/disabling the Save button
+    const notesTextareas = document.querySelectorAll('textarea[data-id]');
+    notesTextareas.forEach((textarea) => {
+      textarea.addEventListener('focus', enableSaveButton);
+      textarea.addEventListener('blur', disableSaveButton);
+    });
+  </script>
+</body>
+</html>

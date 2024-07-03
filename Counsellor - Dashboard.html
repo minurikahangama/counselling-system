@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Counseling System Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      background-color: lightskyblue;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .button {
+      width: 200px;
+      height: 150px;
+      margin: 10px;
+      background-color: white;
+      border-radius: 5px;
+      border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    }
+    .button:hover {
+      cursor: pointer;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    }
+    .icon {
+      font-size: 40px;
+    }
+    .title {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .notification {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: red;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .topic {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 1in;
+      margin-left: 1in;
+    }
+    
+  </style>
+  <script>
+    function openMessageTabs() {
+      window.location.href = "message.html";
+    }
+    
+    function openCallLogs() {
+      window.location.href = "Call logs.html";
+    }
+    
+    function openAppointmentScheduling() {
+      window.location.href = "Time Slots.html";
+    }
+    
+    
+  </script>
+</head>
+<body>
+  <div class="topic">
+    <i class="icon fas fa-chart-bar"></i>
+    Dashboard
+  </div>
+
+  <div class="container">
+    <div class="button" onclick="openMessageTabs()">
+      <i class="icon fas fa-comments"></i>
+      <span class="title">Messages</span>
+    </div>
+    <div class="button" onclick="openCallLogs()">
+      <i class="icon fas fa-phone"></i>
+      <span class="title">Call Logs</span>
+    </div>
+    <div class="button" onclick="openAppointmentScheduling()">
+      <i class="icon fas fa-calendar-alt"></i>
+      <span class="title">Appointment Scheduling</span>
+    </div>
+    
+  </div>
+  <div class="notification">3</div>
+</body>
+</html>
+

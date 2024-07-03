@@ -1,0 +1,18 @@
+
+h1 {
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+#gameButton {
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#score {
+  font-size: 18px;
+}

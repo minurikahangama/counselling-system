@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+
+    <!--================ style ==================-->
+    <link rel="stylesheet" href="navigation.css">
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+      <img src="TZyEjcpF4K6Aw6ZjzPUweZjJ4VKux8n5m8kzF1rT_1.jpg" alt="logo">
+                        </span>
+                        <span class="title1"><h1>Smile</h1></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Counsellor - Dashboard.html" target="contentFrame">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Counsellor final- Profile.php" target="contentFrame">
+                        <span class="icon">
+                            
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="title">My Profile</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Counsellor - Calender.html" target="contentFrame">
+                        <span class="icon">
+                            <ion-icon name="calendar-number-outline"></ion-icon>
+                        </span>
+                        <span class="title">Calender</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="Counsellor - Schedules.php" target="contentFrame">
+                        <span class="icon">
+                            <ion-icon name="time"></ion-icon>
+                        </span>
+                        <span class="title">Schedules</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="Time Slots and appointment.php" target="contentFrame">
+                        <span class="icon">
+                            <ion-icon name="time"></ion-icon>
+                        </span>
+                        <span class="title">Appointment Scheduling</span>
+                    </a>
+                </li>
+
+                    
+                <li>
+                    <a href="Counsellor - settings.html" target="contentFrame">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <san class="title">Settings</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <!-- <a href=""> -->
+                        <a onclick="showConfirmation()">
+
+                            <span class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </span>
+                            <span class="title">Log Out</span>
+                        </a>
+                        <script>
+                            function showConfirmation() {
+                                var result = confirm('Are you sure you want to Logout?');
+                                if (result) {
+                                    // Code to execute when the user clicks "OK"
+                                    alert('Logged out sucessfully!');
+                                } else {
+                                    // Code to execute when the user clicks "Cancel"
+                                    alert('You clicked Cancel!');
+                                }
+                            }
+                        </script>
+                    <!-- </a> -->
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline" class="custom-icon"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+            </div>
+                <div class="mainContent">
+                    <!-- <iframe src="Personal information/index.html" frameborder="0"  name="contentFrame" height="700" width="100%" ></iframe> -->
+                    <iframe src="Counsellor final- Profile.php" frameborder="0"  name="contentFrame" height="700" width="100%" ></iframe>
+                </div>
+                
+
+                <!-- ======================= Cards ================== -->
+                <!-- <div class="cardBox">
+                    <div class="back-card">
+                        <div class="iconBx">
+                            <ion-icon name="chevron-back-outline"></ion-icon>
+                        </div>
+
+                        <div>
+                            <div class="cardName">Back</div>
+                        </div>
+                    </div>
+
+                    <div class="head-card">
+                        <div>
+                            <div class="cardName">Weight Trucker</div>
+                        </div>
+                    </div>
+
+                    <div class="cha-card">
+                        <div class="iconBx">
+                            <ion-icon name="stats-chart-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- ================ Order Details List ================= -->
+                <!-- <div class="row">
+                    <div class="leftcolumn">
+
+                    <div class="card">
+                        <h2>New Weight</h2>
+                        <input class="nw-text" type="text" name="New Weight">
+                        <h2>Today Date</h2>
+                        <input class="td-text" type="text" name="Today Date">
+                    </div>
+
+                    <div class="card">
+                        <h2>Last Weight</h2>
+                        <input class="lw-text" type="text" name="lLast Weight">
+                        <h2>Last Date</h2>
+                        <input class="ld-text" type="text" name="Last Date">
+                    </div>
+
+                    </div>
+
+                    <div class="rightcolumn">
+
+                    <div class="card">
+                        <div class="wd">
+                            <h2>Weight Difference</h2>
+                            <input class="wd-text" type="text" name="Weight Difference">
+                        </div>
+
+                        <div class="dur">
+                            <h2>Duration</h2>
+                            <input class="dur-text" type="text" name="Duration">
+                        </div>
+
+                        <div class="sug">
+                            <h3>Suggestion :</h3>
+                        </div>
+                    </div>
+
+                    </div>
+
+                </div> -->
+        
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="navigation.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>

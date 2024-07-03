@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depression Stage Checker</title>
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #81abfa;
+}
+
+.container {
+  background-color: #c5f7f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 700px;
+  height: 500px;
+}
+
+.status{
+  text-align: justify;
+}
+
+h1 {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+#result {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Depression Stage Checker</h1>
+    <label for="score">Enter your score (1-50):</label>
+    <input type="number" id="score" min="1" max="50">
+    <button id="checkButton">Check Stage</button>
+    <div id="result"></div>
+
+    <div class="status">
+      <h4>  1-10    : Normal </h4>
+      <h4>  11-16   : Mild mood disturbance  </h4>
+      <h4>  17-20   : Borderline clinical depression </h4>
+      <h4>  21-30   : Moderate depression </h4>
+      <h4>  31-40   : Severe depression </h4>
+      <h4>  Over 40 : Extreme depression </h4>
+    </div>
+  </div>
+  
+  <script>
+    const checkButton = document.getElementById('checkButton');
+const scoreInput = document.getElementById('score');
+const resultDiv = document.getElementById('result');
+
+function checkStage() {
+  const score = parseInt(scoreInput.value);
+  let stage;
+
+  if (score >= 1 && score <= 10) {
+    stage = "Normal";
+  } else if (score >= 11 && score <= 16) {
+    stage = "Mild mood disturbance";
+  } else if (score >= 17 && score <= 20) {
+    stage = "Borderline clinical depression";
+  } else if (score >= 21 && score <= 30) {
+    stage = "Moderate depression";
+  } else if (score >= 31 && score <= 40) {
+    stage = "Severe depression";
+  } else if (score > 40) {
+    stage = "Extreme depression";
+  } else {
+    stage = "Invalid score. Please enter a number between 1 and 50.";
+  }
+
+  resultDiv.textContent = `Your depression stage is: ${stage}`;
+}
+
+checkButton.addEventListener('click', checkStage);
+
+  </script>
+</body>
+</html>
